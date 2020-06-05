@@ -11,12 +11,19 @@ public class Test01 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		String baseUrl = "http://www.facebook.com";
+		String expectTitle = "facebook.com";
 		String tagName = "";
-		
 		driver.get(baseUrl);
+		if (baseUrl.equals(expectTitle)) {
+			System.out.println("PASSED");
+		}else {
+			System.out.println("FAILED");
+		}
+		
+		
 		tagName = driver.findElement(By.id("email")).getText();
 		System.out.println(tagName);
-		driver.close();
+		
 		System.exit(0);
 		
 		
